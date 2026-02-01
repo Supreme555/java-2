@@ -1,14 +1,15 @@
 import javax.swing.*;
-import java.awt.FlowLayout;
+import java.awt.GridLayout;
 
-public class SimpleCalculator {
+// Лабораторная работа №3 - Калькулятор с GridLayout
+public class SimpleCalculatorGrid {
     public static void main(String[] args) {
         // Создаём панель
         JPanel windowContent = new JPanel();
 
-        // Задаём менеджер отображения для этой панели
-        FlowLayout fl = new FlowLayout();
-        windowContent.setLayout(fl);
+        // Задаём менеджер расположения для этой панели
+        GridLayout gl = new GridLayout(4, 2);
+        windowContent.setLayout(gl);
 
         // Создаём компоненты в памяти
         JLabel label1 = new JLabel("Number 1:");
@@ -19,7 +20,7 @@ public class SimpleCalculator {
         JTextField result = new JTextField(10);
         JButton go = new JButton("Add");
 
-        // Добавляем компоненты на панель
+        // Добавляем компоненты в панель
         windowContent.add(label1);
         windowContent.add(field1);
         windowContent.add(label2);
@@ -28,12 +29,12 @@ public class SimpleCalculator {
         windowContent.add(result);
         windowContent.add(go);
 
-        // Создаём фрейм и задаём для него панель
+        // Создаём фрейм и задаём панель для него
         JFrame frame = new JFrame("My First Calculator");
         frame.setContentPane(windowContent);
 
-        // задаём размер и делаем фрейм видимым
-        frame.setSize(500, 100);
+        // Задаём размер и отображаем окно
+        frame.setSize(400, 100);
         frame.setVisible(true);
     }
 }
